@@ -32,12 +32,13 @@ public class ScheduledTasks{
 	@Autowired
 	NetClsServiceImpl clsService;
 	
-    @Scheduled(fixedRate = 1000 * 60*10)
+    @Scheduled(fixedRate = 1000 * 10)
     public void reportCurrentTime(){
     	//默认测试
-    	netService.saveUrlTest("http://www.baidu.com");
+    	  netService.saveUrlTest("http://www.baidu.com");
+    	  System.out.println ("Scheduling Tasks Examples By fixedRate: The time is now " + dateFormat ().format (new Date ()));
     }
-    
+   /* //单位是毫秒  
     @Scheduled(fixedRate = 1000 * 60)
     public void checkNet(){
     	List<NetClass> lst = clsService.getList();
@@ -46,13 +47,12 @@ public class ScheduledTasks{
     			netService.saveUrlTest(cls);
     		}
     	}
-    }
+    }*/
 
 
     //每1分钟执行一次
-    @Scheduled(cron = "0 * */1  * * * ")
+    @Scheduled(cron = "0 * *  * * * ")
     public void reportCurrentByCron(){
-    	
         System.out.println ("Scheduling Tasks Examples By Cron: The time is now " + dateFormat ().format (new Date ()));
     }
 
