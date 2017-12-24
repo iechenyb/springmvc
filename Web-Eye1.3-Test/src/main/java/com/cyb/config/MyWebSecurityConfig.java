@@ -32,40 +32,21 @@ public class MyWebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable().authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/users/signup").permitAll()
+                .antMatchers(HttpMethod.POST, "/users/signup").permitAll()//.hasAnyRole("ADMIN")
                 .antMatchers(HttpMethod.POST, "/users/login").permitAll()
                 .antMatchers("/users/toLogin").permitAll()
                 .antMatchers("/users/toRedirect").permitAll()
                 .antMatchers( "/login.jsp").permitAll()
                 .antMatchers( "/users/exit").permitAll()
                 .antMatchers("/sw/**").permitAll()
+                .antMatchers("/plan/**").hasAnyRole("USER","ADMIN")
                 .antMatchers("/net/**").permitAll()
                 .antMatchers("/common/**").permitAll()
-              //  .antMatchers("/druid/**","/druid/index.html").permitAll()
-                //role should not start with 'ROLE_' since it is automatically inserted. Got 'ROLE_ADMIN'
                 .antMatchers("/visitor1/home").hasAnyRole("USER","ADMIN")
                 .antMatchers("/visitor1/admin").hasRole("ADMIN")
                 .antMatchers("/visitor1/user").hasRole("USER")
                 .anyRequest().authenticated()
-               // .antMatchers("/druid/**","/druid/index.html").permitAll()
                 ;
-                /*
-                .anyRequest().authenticated()
-                .and()
-                .formLogin().loginPage("/users/toRedirect").permitAll() ;
-		       /* http.authorizeRequests()
-		        .antMatchers("/home").permitAll()
-		        //其他地址的访问均需验证权限
-		        .anyRequest().authenticated()
-		        .and()
-		        .formLogin()
-		        .loginPage("/login")  //指定登录页是"/login"
-		        .defaultSuccessUrl("/list")  //登录成功后默认跳转到"list"
-		        .permitAll()
-		        .and()
-		        .logout()
-		        .logoutSuccessUrl("/home")  //退出登录后的默认url是"/home"
-		        .permitAll();*/
     }
 
     @Override

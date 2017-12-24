@@ -33,6 +33,9 @@ public class PlanServiceImpl {
 
 	@Autowired
 	PlanRepository planRep;
+	
+	@Autowired
+	PlanTypeDaoImpl planType;
 
 	public synchronized void savePlan(String url) {
 		List<PlanType> types = daoType.getAll();

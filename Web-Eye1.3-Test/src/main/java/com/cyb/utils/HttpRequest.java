@@ -97,7 +97,7 @@ public class HttpRequest {
 	            		continue;
 	            	}
             	}
-            	jhs.get(cur).append(line+"\n");
+            	jhs.get(cur).append(line+"<br>");
             }
             return  jhs;
         } catch (Exception e) {

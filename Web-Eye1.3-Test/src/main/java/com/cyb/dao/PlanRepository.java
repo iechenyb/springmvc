@@ -12,4 +12,7 @@ import com.cyb.po.Plan;
 public interface PlanRepository extends JpaRepository<Plan, Long> {
 	@Query("select u from Plan u where u.jhlx = ?1 and u.jhbh=?2") 
 	Plan findPlan(String jhlx,String jhbh); 
+	
+	@Query("select u from Plan u where u.id = ?1") 
+	Plan findPlanById(long id); 
 }
