@@ -78,7 +78,7 @@ public class MyWebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         //解决静态资源被拦截的问题
         web.ignoring()
-        .antMatchers("/lhmj/**")
+        .antMatchers("/lhmj/**")  .antMatchers("/static/**")
         .antMatchers("/css/**")
         .antMatchers("/js/**")
         .antMatchers("/img/**")
