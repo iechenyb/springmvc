@@ -92,8 +92,7 @@ public class HttpRequest {
             while ((line = in.readLine()) != null) {
 	            for(int i=0;i<jhname.length;i++){
 	            	if(line.contains(jhname[i])){
-	            		cur=jhname[i].substring(3, 4);//取计划号
-	            		System.out.println("cur"+cur);
+	            		cur=i+"";//取计划号
 	            		jhs.put(cur, new StringBuffer());
 	            		continue;
 	            	}

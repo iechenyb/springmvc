@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.cyb.utils.SpringUtils;
 import com.google.common.collect.ImmutableMap;
@@ -116,13 +117,18 @@ public class CommonController {
 		return res;
 	}
 	
-	/**
-	 * 
-	 *作者 : iechenyb<br>
-	 *方法描述: dubbo方法测试<br>
-	 *创建时间: 2017年7月15日hj12
-	 *@param msg
-	 *@return
-	 */
+	@GetMapping("toPage")
+	public String toPage(Map<String,String> param){
+		param.put("name", "chenyb");
+		return "index";
+	}
+	
+	@GetMapping("toPage1")
+	public ModelAndView toPage1(){
+		ModelAndView view = new ModelAndView();
+		view.addObject("name", "chenyb");
+		view.setViewName("index");
+		return view;
+	}
 	
 }

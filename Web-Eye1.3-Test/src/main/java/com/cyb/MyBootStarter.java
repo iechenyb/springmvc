@@ -28,17 +28,17 @@ import com.cyb.h2.H2Manager;
 @EnableTransactionManagement
 @SpringBootApplication
 @RestController
-public class MyBootStarter extends SpringBootServletInitializer implements CommandLineRunner {
-
+public class MyBootStarter  {
+//extends SpringBootServletInitializer
 	@Bean
 	public BCryptPasswordEncoder bCryptPasswordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 	
-	@Override  
+	/*@Override  
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {  
         return application.sources(MyBootStarter.class);  
-    }  
+    }  */
 	public  static ConfigurableApplicationContext context;
 	
 	public static ConfigurableApplicationContext getContext() {
@@ -65,8 +65,8 @@ public class MyBootStarter extends SpringBootServletInitializer implements Comma
         return new HibernateJpaSessionFactoryBean();
     }
 
-	@Override
+	/*@Override
 	public void run(String... arg0) throws Exception {
 		System.err.println("服务调用者------>>启动完毕");
-	}
+	}*/
 }
