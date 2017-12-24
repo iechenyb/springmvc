@@ -2,12 +2,9 @@ package com.cyb;
 
 import javax.sql.DataSource;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.ServletComponentScan;
-import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -16,8 +13,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.cyb.h2.H2Manager;
 /**
  *作者 : iechenyb<br>
  *类描述: 说点啥<br>
@@ -46,7 +41,6 @@ public class MyBootStarter  {
 	}
 
 	public static void main(String[] args) {
-		H2Manager.start();
 		SpringApplication.run(MyBootStarter.class, args);
 	}
 
