@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:cyb="http://www.iechenyb.com/anyuri/schema/user"
+    xmlns:cyb1="http://www.iechenyb.com/anyuri/schema/user"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd    
+    http://www.iechenyb.com/anyuri/schema/user 
+    http://www.iechenyb.com/anyuri/schema/user/user.xsd">
+    <cyb:user id="eric" name="123" sex="male" age="28" />
+    <cyb1:user id="eric1" name="456" sex="boy" age="30" />
+</beans> 
