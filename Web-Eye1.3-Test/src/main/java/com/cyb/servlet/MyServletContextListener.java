@@ -4,7 +4,8 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import com.cyb.h2.H2Manager;
+import com.cyb.h2m.H2Manager;
+
 
 @WebListener
 public class MyServletContextListener implements ServletContextListener {
