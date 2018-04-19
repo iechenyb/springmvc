@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:rpc="http://www.bytebeats.com/schema/rpc"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd    
+   http://www.bytebeats.com/schema/rpc http://www.bytebeats.com/schema/rpc/rpc.xsd">
+	<!-- <rpc:registry id="zk" protocol="zookeeper" address="127.0.0.1" />
+    <rpc:protocol id="hessian" name="hessian" port="9001"/> -->
+    <rpc:service id="rpcService" ref="helloService" interface="com.bytebeats.spring4.extension.service.IHelloService" ></rpc:service>
+   <!--  <rpc:ref id="accountService" interface="com.bytebeats.spring4.extension.service.IAccountService" retries="0" check="false" />
+    <bean id="helloService" class="com.bytebeats.spring4.extension.service.impl.HelloServiceImpl" /> -->
+</beans>   

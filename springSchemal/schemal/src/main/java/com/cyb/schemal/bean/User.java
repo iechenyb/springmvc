@@ -10,7 +10,7 @@ public class User {
     private String name;
     private String sex;
     private int age;
-
+    private Student student;
     public String getId() {
         return id;
     }
@@ -42,4 +42,12 @@ public class User {
     public void setAge(int age) {
         this.age = age;
     }
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
 }

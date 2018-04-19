@@ -23,7 +23,8 @@ public class UserBeanDefinitionParser extends AbstractSingleBeanDefinitionParser
         String name = element.getAttribute("name");
         String sex = element.getAttribute("sex");
         int age = Integer.parseInt(element.getAttribute("age"));
-
+        /*String ref = element.getAttribute("ref");
+        bean.addPropertyValue("ref", ref);*/
         bean.addPropertyValue("id", id);
         bean.addPropertyValue("name", name);
         bean.addPropertyValue("sex", sex);

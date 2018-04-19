@@ -5,8 +5,10 @@
     xmlns:cyb1="http://www.iechenyb.com/anyuri/schema/user"
     xsi:schemaLocation="http://www.springframework.org/schema/beans 
     http://www.springframework.org/schema/beans/spring-beans-3.1.xsd    
-    http://www.iechenyb.com/anyuri/schema/user 
-    http://www.iechenyb.com/anyuri/schema/user/user.xsd">
-    <cyb:user id="eric" name="123" sex="male" age="28" />
-    <cyb1:user id="eric1" name="456" sex="boy" age="30" />
+    http://www.iechenyb.com/anyuri/schema/user http://www.iechenyb.com/anyuri/schema/user/user.xsd">
+    <bean id="stu" class="com.cyb.schemal.bean.Student">
+    	<property name="name" value="chenyuanbao"></property>
+    </bean>
+    <cyb:user id="eric" name="123" sex="male" age="28" ref="stu"/>
+    <cyb1:user id="eric1" name="456" sex="boy" age="30" ref="stu" />
 </beans> 
